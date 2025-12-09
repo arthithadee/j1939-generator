@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J1939 Signal Generator</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; text-align: center; }
+        .pgn-list { max-height: 300px; overflow-y: auto; border: 1px solid #ddd; padding: 10px; margin-bottom: 20px; }
+        .pgn-item { padding: 8px; border-bottom: 1px solid #eee; }
+        .controls { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        select, input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        button { width: 100%; padding: 15px; background-color: #3498db; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background 0.3s; }
+        button:hover { background-color: #2980b9; }
+        label { font-weight: bold; display: block; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛠️ J1939 Signal Generator</h1>
+        
+        <label>Select PGNs (Signals are auto-included):</label>
+        <div class="pgn-list">
+            {% for pgn in pgns %}
+            <div class="pgn-item">
+                <input type="checkbox" id="pgn_{{ pgn.id }}" value="{{ pgn.id }}">
+                <label for="pgn_{{ pgn.id }}" style="display:inline; font-weight:normal;">{{ pgn.name }} (PGN {{ pgn.id }})</label>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="controls">
+            <div>
+                <label>Simulation Duration (seconds):</label>
+                <input type="number" id="duration" value="10" min="1" max="600">
+            </div>
+            <div>
+                <label>Export Format:</label>
+                <select id="format">
+                    <option value="csv">CSV (Excel Readable)</option>
+                    <option value="trc">.TRC (Vector/Peak)</option>
+                    <option value="txt">.TXT (Hex Dump)</option>
+                </select>
+            </div>
+        </div>
+
+        <button onclick="generateData()">🚀 Generate & Download</button>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
