@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J1939 Generator Activating...</title>
+    <meta http-equiv="refresh" content="55; url=https://j1939-generator.onrender.com/" />
+    <style>
+        /* Color Palette: Lilac/Purple Shades */
+        :root {
+            --bg-dark: #1e1528;
+            --bg-light: #281a38;
+            --primary: #9b59b6; 
+            --accent: #d7bde2; 
+            --text-light: #f4f4f9;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            text-align: center; 
+            padding: 50px 20px; 
+            background-color: var(--bg-dark); 
+            color: var(--text-light); 
+        }
+
+        .container { 
+            max-width: 900px; 
+            margin: auto; 
+            background: var(--bg-light); 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--primary);
+        }
+
+        h1 { 
+            color: var(--primary); 
+            margin-bottom: 30px; 
+        }
+
+        .loader { 
+            border: 4px solid var(--primary); 
+            border-top: 4px solid var(--accent); 
+            border-radius: 50%; 
+            width: 50px; 
+            height: 50px; 
+            animation: spin 1.5s linear infinite; 
+            margin: 20px auto 40px; 
+        }
+
+        .facts-box { 
+            background-color: #382550; 
+            border: 1px solid var(--primary); 
+            padding: 25px; 
+            border-radius: 10px; 
+            margin-top: 40px; 
+            text-align: left; 
+        }
+
+        .facts-box h2 {
+            color: var(--accent);
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        .fact-item { 
+            margin-bottom: 20px; 
+            border-left: 3px solid var(--accent); 
+            padding-left: 15px; 
+        }
+        
+        .fact-item strong {
+            color: var(--primary);
+        }
+
+        @keyframes spin { 
+            0% { transform: rotate(0deg); } 
+            100% { transform: rotate(360deg); } 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>💡 J1939 Generator is Preparing Your Tools...</h1>
+    <p>We're firing up the heavy-duty server instance. This may take about 50 seconds.</p>
+    <p>Hang tight! Here are some interesting facts about the protocol while you wait:</p>
+    
+    <div class="loader"></div>
+    
+    <div class="facts-box">
+        <h2>J1939 Protocol Facts You Might Not Know:</h2>
+        <div class="fact-item">
+            <p><strong>Not Just Trucks:</strong> J1939 isn't limited to over-the-road trucks! It's the standard for communications in everything from **marine engines** to massive **agricultural tractors** (like combines) and **construction equipment**.</p>
+        </div>
+        <div class="fact-item">
+            <p><strong>SAE Standard:</strong> J1939 is developed by the **Society of Automotive Engineers (SAE)**. It is essentially the "rule book" for how computers talk to each other in heavy-duty commercial vehicles. </p>
+        </div>
+        <div class="fact-item">
+            <p><strong>Prioritized Messages:</strong> J1939 uses a **message priority system**. Critical messages like "Brake Status" always get transmitted before less critical messages like "Vehicle Identification Number." This ensures safety functions are always prioritized. </p>
+        </div>
+        <div class="fact-item">
+            <p><strong>PGN Database:</strong> There are thousands of defined **Parameter Group Numbers (PGNs)**. These numbers are centrally managed and documented, meaning a PGN for "Engine Speed" means the exact same thing whether it's coming from a Peterbilt or a John Deere machine.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
