@@ -1,6 +1,3 @@
-# j1939_generator/requirements.txt (CORRECT)
-# j1939_generator/requirements.txt
 Flask==3.0.0
-numpy==1.26.4
-pandas==2.1.4
-gunicorn
+numpy==1.26.0
+pandas==2.1.0
